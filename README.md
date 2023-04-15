@@ -9,10 +9,18 @@ Universal-EDA is a Python library that provides an easy-to-use interface for Exp
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install Universal-EDA.
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install Universal-EDA (not yet, chatGPT-4 idea).
 
 ```bash
 pip install universal-EDA
+```
+
+Clone the repository and install the required dependencies:
+
+```bash
+git clone https://github.com/your_username/universal-EDA.git
+cd universal-EDA
+pip install -r requirements.txt
 ```
 
 ## Usage
