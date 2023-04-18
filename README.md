@@ -33,7 +33,6 @@ data_explorer.basic_info()
 
 # Save the DataFrame as a CSV file
 data_loader.dataframe_to_csv('boston_housing.csv')
-
 ```
 
 Sample Python interpreter output:
