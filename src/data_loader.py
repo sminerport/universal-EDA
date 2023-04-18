@@ -112,6 +112,7 @@ class DataLoader:
             data = pd.DataFrame(data=dataset.data, columns=dataset.feature_names)
             data["target"] = dataset.target
 
+        self.data = data
         return data
 
     def dataframe_to_csv(self, file_name):

@@ -9,12 +9,6 @@ Universal-EDA is a Python library that provides an easy-to-use interface for Exp
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install Universal-EDA (not yet, chatGPT-4 idea).
-
-```bash
-pip install universal-EDA
-```
-
 Clone the repository and install the required dependencies:
 
 ```bash
@@ -27,26 +21,28 @@ pip install -r requirements.txt
 
 
 ```python
-from universal_EDA import DataExplorer, DataLoader
+from src import DataExplorer, DataLoader
 
 # Load a sample dataset
 data_loader = DataLoader()
-df = data_loader.load_toy_dataset('iris')
+df = data_loader.load_toy_dataset('boston')
 
 # Perform EDA on the dataset
 data_explorer = DataExplorer(df)
-data_explorer.summarize()
-data_explorer.visualize()
+data_explorer.basic_info()
 
 # Save the DataFrame as a CSV file
-data_loader.to_csv(df, 'output.csv')
+data_loader.dataframe_to_csv('boston_housing.csv')
+
 ```
+
+Sample Python interpreter output:
+
+![Sample Python Interpreter Output](images/instructions.png)
 
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
 
 ## License
 
