@@ -74,11 +74,12 @@ class DataLoader:
         Parameters
         ----------
         dataset_name : str
-            The name of the dataset that have to be loaded.
+            The name of the dataset that has to be loaded.
 
         Returns
         -------
-        No explicit return. Updates a dataframe associated to the class instance.
+        data : pd.DataFrame
+            A DataFrame containing the loaded dataset.
 
         Raises
         ------
@@ -91,12 +92,26 @@ class DataLoader:
             dataset = datasets.load_iris()
         elif dataset_name == "diabetes":
             dataset = datasets.load_diabetes()
-        # Add more datasets here
+        elif dataset_name == "digits":
+            dataset = datasets.load_digits()
+        elif dataset_name == "linnerud":
+            dataset = datasets.load_linnerud()
+        elif dataset_name == "wine":
+            dataset = datasets.load_wine()
+        elif dataset_name == "breast_cancer":
+            dataset = datasets.load_breast_cancer()
         else:
             raise ValueError("Invalid dataset name provided.")
 
-        self.data = pd.DataFrame(data=dataset.data, columns=dataset.feature_names)
-        self.data["target"] = dataset.target
+        if dataset_name == "linnerud":
+            data = pd.DataFrame(data=dataset.data, columns=dataset.feature_names)
+            data["target"] = [tuple(x) for x in dataset.target]
+            data["target_names"] = [tuple(x) for x in dataset.target_names]
+        else:
+            data = pd.DataFrame(data=dataset.data, columns=dataset.feature_names)
+            data["target"] = dataset.target
+
+        return data
 
     def dataframe_to_csv(self, file_name):
         """
@@ -119,7 +134,7 @@ class DataLoader:
         if self.data is not None:
             self.data.to_csv(file_name, index=False)
         else:
-            raise ValueError('No data available to save. Load a dataset first.')
+            raise ValueError("No data available to save. Load a dataset first.")
 
 
 if __name__ == "__main__":
