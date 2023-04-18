@@ -16,7 +16,7 @@ This project was inspired by the process of updating the [Simple Linear Regressi
 Clone the repository and install the required dependencies:
 
 ```bash
-git clone https://github.com/your_username/universal-EDA.git
+git clone https://github.com/sminerport/universal-EDA.git
 cd universal-EDA
 pip install -r requirements.txt
 ```
