@@ -3,3 +3,6 @@ venv_universal/
 
 # VSCode stuff
 .vscode/
+
+# Python stuff
+src/__pycache__/
