@@ -66,6 +66,7 @@ class DataLoader:
             Data of the class.
                 self.data = None
         """
+        self.data = None
 
     def load_toy_dataset(self, dataset_name):
         """
